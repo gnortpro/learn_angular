@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"  >
+<head>
+	<title> Document  </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 	
+	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/angular-material.min.css">
+	<link rel="stylesheet" href="vendor/font-awesome.css">
+	<link rel="stylesheet" href="1.css">
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+
+
+	<div class="jumbotron">
+		<div ng-repeat='motnguoi in nhieunguoi' ng-init="motnguoi.display=false">
+			<div class="card sua" ng-show="motnguoi.display">
+				<div class="card-header">
+					<h4 class="float-left">Info of <input type="text" ng-model="motnguoi.ten"></h4>
+
+				</div>
+				<div class="card-body">
+					<p>Age: <input type="text" ng-model="motnguoi.tuoi"></p>
+					<p>Position: <input type="text" ng-model="motnguoi.chucvu"></p>
+				</div>
+				<div class="card-footer">
+					<button class="btn btn-default float-right" ng-click="changDisplay(motnguoi)">
+						<i class="fa fa-save"></i></button>
+				</div>
+			</div>
+
+			<div class="card" >
+				<div class="card-header" ng-show="!motnguoi.display">
+					<h4 class="float-left">Info of {{motnguoi.ten}}</h4>
+					<button class="btn btn-info float-right" ng-click="changDisplay(motnguoi)"><i class="fa fa-edit"></i></button>
+				</div>
+				<div class="card-body">
+					<p>Age: {{motnguoi.tuoi}}</p>
+					<p>Position: {{motnguoi.chucvu}}</p>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript" src="vendor/jquery.min.js"></script>  
+	<script type="text/javascript" src="vendor/bootstrap.min.js"></script>  
+	<script type="text/javascript" src="vendor/angular-1.5.min.js"></script>  
+	<script type="text/javascript" src="vendor/angular-animate.min.js"></script>
+	<script type="text/javascript" src="vendor/angular-aria.min.js"></script>
+	<script type="text/javascript" src="vendor/angular-messages.min.js"></script>
+	<script type="text/javascript" src="vendor/angular-material.min.js"></script>  
+	<script type="text/javascript" src="1.js"></script>
+</body>
+</html>
